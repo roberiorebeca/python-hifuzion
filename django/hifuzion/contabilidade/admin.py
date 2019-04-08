@@ -1,5 +1,5 @@
 from django.contrib import admin
-from hifuzion.contabilidade.models import PlanoConta, Cliente
+from hifuzion.contabilidade.models import PlanoConta, Cliente, Todo
 
 admin.site.register(PlanoConta)
 
@@ -12,3 +12,5 @@ class ClienteAdmin(admin.ModelAdmin):
                     'email',
                     'conta']
     search_fields = ('nome', 'email', 'conta__nome')
+
+admin.site.register(Todo)

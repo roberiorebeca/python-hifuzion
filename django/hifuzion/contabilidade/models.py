@@ -16,3 +16,16 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Todo(models.Model):
+    cliente = models.ForeignKey(to='contabilidade.Cliente', on_delete=models.CASCADE)
+    nota = models.TextField()
+    finalizado = models.BooleanField(default=False)
+    data = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.nota
+
+    def finalizar(self):
+        self.finalizado = True
+        self.save()

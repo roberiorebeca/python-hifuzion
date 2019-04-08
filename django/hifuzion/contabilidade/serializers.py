@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from hifuzion.contabilidade.models import Cliente, PlanoConta
+from hifuzion.contabilidade.models import Cliente, PlanoConta, Todo
 
 
 class PlanoContaSerializer(serializers.ModelSerializer):
@@ -16,4 +16,10 @@ class ClienteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cliente
+        fields = '__all__'
+        
+
+class TodoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Todo
         fields = '__all__'
