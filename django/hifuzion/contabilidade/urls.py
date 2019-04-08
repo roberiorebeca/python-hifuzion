@@ -6,6 +6,6 @@ router = routers.DefaultRouter()
 
 router.register('clientes', ClienteViewSet)
 router.register('contas', PlanoContaViewSet)
-router.register('todo', TodoViewSet)
+router.register('todos', TodoViewSet)
 
 urlpatterns = router.urls
