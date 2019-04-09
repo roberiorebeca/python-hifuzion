@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.decorators import action
+from django_filters.rest_framework import DjangoFilterBackend
 
 from hifuzion.contabilidade.serializers import ClienteSerializer, PlanoContaSerializer, TodoSerializer
 from hifuzion.contabilidade.models import Cliente, PlanoConta, Todo
@@ -20,7 +21,8 @@ class PlanoContaViewSet(viewsets.ModelViewSet):
 class TodoViewSet(viewsets.ModelViewSet):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
-    filter_fields = {'cliente','finalizado'}
+    filter_backends = (DjangoFilterBackend,)
+    filter_fields = ('cliente','finalizado')
 
     @action(methods=['post'], detail=True)
     def finalizar(self, request, pk=None):

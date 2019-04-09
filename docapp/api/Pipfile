@@ -9,11 +9,13 @@ notebook = "*"
 
 [packages]
 django = "*"
-django-extensions = "*"
-djangorestframework = "*"
+python-decouple = "*"
+dj-database-url = "*"
 django-cors-headers = "*"
-django-filters = "*"
+django-extensions = "*"
 django-filter = "*"
+django-rest-auth = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"
